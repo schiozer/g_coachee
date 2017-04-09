@@ -9,7 +9,7 @@ public class PhoneTest {
 	public void testToString() {
 		
 		Phone phone = new Phone();
-		phone.setPhone("551199898544");
+		phone.setPhone("5511982918544");
 		
 		Assert.assertEquals("+55 11 98291-8544", phone.toString());
 	}

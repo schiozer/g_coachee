@@ -24,6 +24,6 @@ public class Phone {
 	
 	@Override
 	public String toString() {
-		return phone;
+		return phone.length() == 13 ? (String.valueOf(phone).replaceFirst("(\\d{2})(\\d{2})(\\d{5})(\\d+)", "+$1 $2 $3-$4")) : (String.valueOf(phone).replaceFirst("(\\d{2})(\\d{2})(\\d{4})(\\d+)", "+$1 $2 $3-$4"));
 	}
 }

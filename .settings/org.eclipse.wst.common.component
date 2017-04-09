@@ -5,6 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF/views"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF/tags"/>
         <property name="context-root" value="g_coachee"/>
         <property name="java-output-path" value="/g_coachee/target/classes"/>
     </wb-module>
