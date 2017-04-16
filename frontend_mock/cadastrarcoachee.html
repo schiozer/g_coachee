@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="Gerenciamento de Coachees" content="">
+		<meta name="Fabio Schiozer" content="">
+		<link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+		<title>Gerenciamento de Coachees</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="./bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Bootstrap theme -->
+		<link href="./bootstrap-3.3.6-dist/css/bootstrap-theme.min.css" rel="stylesheet">
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		
+		<!-- Custom styles for this projetc -->
+		<link href="./css/style.css" rel="stylesheet">
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body role="document">
+	
+		<div class="container" role="main">
+		
+			<header class="row">
+				<!-- Fixed navbar -->
+				<nav class="navbar navbar-inverse navbar-fixed-top">
+					<div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+							<a class="navbar-brand" href="javascript:;">G-COACHEE</a>
+						</div>
+						<div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="cadastrarcoachee.html">Cadastrar Coachee</a></li>
+								<li><a href="pesquisarcoachee.html">Pesquisar Coachee</a></li>
+								<li><a href="agenda.html">Agenda</a></li>
+								<li><a href="preferencias.html">Preferências</a></li>
+								<li><a href="contato.html">Contato</a></li>
+								<li><a href="sobre.html">Sobre</a></li>
+							</ul>
+							<!--
+							<form class="navbar-form navbar-left" role="search">
+								<div class="input-group">
+									<input class="form-control" type="text" placeholder="Pesquisar Coachee ..."/>
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button" onclick="pesquisarcoachee.html">
+											<span class="glyphicon glyphicon-search"></span>
+										</button>
+									</span>
+								</div>
+							</form>
+							-->
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							</ul>
+						</div><!--/.nav-collapse -->
+					</div>
+				</nav>
+			</header>
+
+			
+			<div class="row">
+
+				<div class="container theme-showcase" role="main">
+					<div class="page-header">
+						<h2>Cadastrar Coachee</h2>
+					</div>
+				</div>
+		
+				<form id="coacheeDataForm" role="form">
+
+				    <div id="alertaCampos" class="alert alert-danger myAlerts" role="alert">
+				        <strong>Erro ao enviar dados!</strong> Alguns campos estão com problema. Favor informar corretamente.
+				    </div>
+					
+					<!-- it must include classes has-error has-feedback when an error happens -->
+					<div id="divName" class="form-group">
+						<label for="inputName">Nome:</label>
+
+						<input id="inputName" type="text" class="form-control" placeholder="Digite seu nome do coachee (campo obrigatório)" autofocus required/>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+
+					<div id="divAddress" class="form-group">
+						<label for="inputAddress">Endereço:</label>
+						<input id="inputAddress" type="text" class="form-control" placeholder="Digite o endereço do coachee (campo opcional)"/>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+
+					<div class="row">
+
+						<div class="col-md-4">
+							<div id="divEmail" class="form-group" >
+								<label for="inputEmail">Email:</label>
+								<input id="inputEmail" type="email" class="form-control" placeholder="Digite o e-mail do coachee (campo obrigatório)" required />
+								<span id="iconEmail" class="glyphicon glyphicon-remove form-control-feedback myAlerts"></span>
+								<div id="helperEmail" class="help-block with-errors myAlerts">Digite um e-mail no formato abcd@efg</div>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div id="divGender" class="form-group">
+								<label for="optGender">Sexo:</label><br>
+								<label class="radio-inline">
+								  <input type="radio" name="optGender" checked>Masculino</input>
+								</label>
+								<label class="radio-inline">
+								  <input type="radio" name="optGender">Feminino</input>
+								</label>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div id="divBirthDate" class="form-group">
+								<label for="inputBirthDate">Data de Nascimento:</label>
+								<input id="inputBirthDate" type="date" class="form-control date-field"/>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+								<span id="iconBirthDate" class="glyphicon glyphicon-remove form-control-feedback myAlerts"></span>
+								<div id="helperBirthDate" class="help-block with-errors myAlerts">Digite uma data válida</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div id="divTelephone" class="form-group col-md-4">
+							<label for="inputTelephone" class="control-label">Telefone Celular:</label>
+							<input id="inputTelephone" type="number" class="form-control telephone-field" placeholder="Digite o celular (campo obrigatório)" required>
+								<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+							</input>
+						</div>
+
+						<div id="divRG" class="form-group col-md-4">
+							<label for="inputRG" class="control-label">RG:</label>
+							<input id="inputRG" type="text" class="form-control rg-field"/>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+						
+						<div id="divCPF" class="form-group col-md-4">
+							<label for="inputCPF" class="control-label">CPF:</label>
+							<input id="inputCPF" type="text" class="form-control cpf-field"/>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						</div>
+					</div>
+					
+					<div id="divComments" class="form-group">
+						<label for="textComments">Comentários</label>
+						<textarea id="textComments" class="form-control" rows="10" placeholder="Digite comentários sobre o coachee (campo opcional)"></textarea>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					</div>
+
+					<button id="okbutton" type="submit" class="btn btn-primary" onclick="return submitButtonOnClick()">Salvar Coachee</button>
+					<!--
+					<button id="cancelbutton" type="button" class="btn btn-default" onclick="cancelbuttonOnClick2()">Cancelar</button>
+					-->
+					
+				</form>
+				
+			</div>
+			
+			<footer class="row">
+			</footer>
+		</div> <!-- /container -->	
+
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="./js/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+		<script src="./bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+		<script src="./js/docs.min.js"></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script src="./js/ie10-viewport-bug-workaround.js"></script>
+		<!-- Project Scripting -->
+		<script src="./js/coachingProject.js"></script>
+		<script src="./js/cadastrocoachee.js"></script>
+	</body>
+</html>

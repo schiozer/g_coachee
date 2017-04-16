@@ -25,7 +25,7 @@ public class Subscription {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer	id;
+	private Integer	subscriptionId;
     
 	@Version   
     private Integer version;
@@ -47,12 +47,12 @@ public class Subscription {
 	@JoinColumn(name = "id", nullable=false)
 	Subscriber subscriber;
 	
-    public Integer getId() {
-		return id;
+    public Integer getSubscriptionId() {
+		return subscriptionId;
 	}
 	
-	public void setId(Integer id) {
-		this.id = id;
+	public void setSubscriptionId(Integer id) {
+		this.subscriptionId = id;
 	}
 	
 	public Calendar getExpirationDate() {

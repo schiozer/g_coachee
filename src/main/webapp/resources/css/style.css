@@ -1,0 +1,47 @@
+body {
+  padding-top: 70px;
+  padding-bottom: 30px;
+}
+
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+  width: auto;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}
+
+.date-field {
+  width: 160px;
+}
+
+.cpf-field {
+  width: 160px;
+}
+
+.rg-field {
+  width: 160px;
+}
+
+.telephone-field {
+  width: 160px;
+}
+
+.myAlerts {
+  display: none;
+}

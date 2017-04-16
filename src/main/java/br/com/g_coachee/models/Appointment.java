@@ -3,6 +3,7 @@ package br.com.g_coachee.models;
 import java.util.Calendar;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,16 +12,19 @@ import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Version;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Table(name="T_APPOINTMENT")
 public class Appointment {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer	id;
+	private Integer	appointmentId;
 	
     @Version   
     private Integer version;
@@ -36,28 +40,28 @@ public class Appointment {
 	protected Calendar endtDateTime;
 
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-	@JoinColumn(name = "id", nullable=false)
-	protected SubscriberCalendar calendar;
+	@JoinColumn(name = "subscriberId", nullable=false)
+	protected Subscriber subscriber;
     
     @NotBlank
     @ManyToOne(optional = false, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id", nullable=false)
+    @JoinColumn(name = "coacheeSubscriptionId", nullable=false)
     protected CoacheeSubscription coacheeSubscription;
 
     @OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "id", nullable=true)
+	@JoinColumn(name = "sessionId", nullable=true)
 	protected Session session;
 
 	@Lob
 	@Column(name="COMMENTS", nullable=true)
 	private String comments;
 
-	public Integer getId() {
-		return id;
+	public Integer getAppointmentId() {
+		return appointmentId;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setAppointmentId(Integer id) {
+		this.appointmentId = id;
 	}
 
 	public Integer getVersion() {
@@ -80,12 +84,12 @@ public class Appointment {
 		this.endtDateTime = endtDateTime;
 	}
 
-	public SubscriberCalendar getCalendar() {
-		return calendar;
+	public Subscriber getSubscriber() {
+		return subscriber;
 	}
 
-	public void setCalendar(SubscriberCalendar calendar) {
-		this.calendar = calendar;
+	public void setSubscriber(Subscriber subscriber) {
+		this.subscriber = subscriber;
 	}
 
 	public CoacheeSubscription getCoacheeSubscription() {

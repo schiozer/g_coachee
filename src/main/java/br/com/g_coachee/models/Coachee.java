@@ -4,21 +4,25 @@ import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Table(name="T_COACHEE")
 public class Coachee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer	id;
+	private Integer	coacheeId;
     
 	@Version   
     private Integer version;
@@ -58,12 +62,12 @@ public class Coachee {
 	@Column(name="COMMENTS", nullable=true)
 	protected String comments;
 	
-	public Integer getId() {
-		return id;
+	public Integer getCoacheeId() {
+		return coacheeId;
 	}
 	
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCoacheeId(Integer id) {
+		this.coacheeId = id;
 	}
 	
 	public Integer getVersion() {

@@ -34,7 +34,7 @@ public class Subscriber {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer	id;
+	private Integer	subscriberId;
     
 	@Version   
     private Integer version;
@@ -68,15 +68,15 @@ public class Subscriber {
 	@OneToMany(mappedBy="subscriber", fetch=FetchType.LAZY)
 	protected List<Subscription> subscriptions;
 
-	@Embedded
-	protected SubscriberCalendar calendar;
+	@OneToMany(mappedBy="subscriber", fetch=FetchType.LAZY)
+	protected List<Appointment> appointments;
 
-	public Integer getId() {
-		return id;
+	public Integer getSubscriberId() {
+		return subscriberId;
 	}
 	
-	public void setId(Integer id) {
-		this.id = id;
+	public void setSubscriberId(Integer id) {
+		this.subscriberId = id;
 	}
 	
 	public String getCpf() {
@@ -139,11 +139,11 @@ public class Subscriber {
 		this.subscriptions = subscriptions;
 	}
 
-	public SubscriberCalendar getCalendar() {
-		return calendar;
+	public List<Appointment> getAppointments() {
+		return appointments;
 	}
 
-	public void setCalendar(SubscriberCalendar calendar) {
-		this.calendar = calendar;
+	public void setAppointments(List<Appointment> appointments) {
+		this.appointments = appointments;
 	}
 }

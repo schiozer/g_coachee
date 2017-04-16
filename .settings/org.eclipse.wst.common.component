@@ -3,9 +3,9 @@
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF/views"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/WEB-INF/tags"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/webapp/resources"/>
         <property name="context-root" value="g_coachee"/>
         <property name="java-output-path" value="/g_coachee/target/classes"/>
     </wb-module>

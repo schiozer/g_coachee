@@ -4,12 +4,14 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.persistence.Version;
 import javax.validation.constraints.Min;
 
@@ -17,11 +19,13 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Table(name="T_COACHEESUBSCRIPTION")
 public class CoacheeSubscription {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer	id;
+	private Integer	coacheeSubscriptionId;
 	
     @Version   
     private Integer version;
@@ -47,12 +51,12 @@ public class CoacheeSubscription {
 	@JoinColumn(name = "id", nullable=false)
 	Coachee coachee;
 	
-    public Integer getId() {
-		return id;
+    public Integer getCoacheeSubscriptionId() {
+		return coacheeSubscriptionId;
 	}
 	
-    public void setId(Integer id) {
-		this.id = id;
+    public void setCoacheeSubscriptionId(Integer id) {
+		this.coacheeSubscriptionId = id;
 	}
 	
     public Integer getVersion() {
